@@ -71,7 +71,7 @@ public class VCLabelSticker: VCBaseSticker {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
     // mark - 重写父类的方法
