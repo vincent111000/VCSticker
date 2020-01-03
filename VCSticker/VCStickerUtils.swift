@@ -167,7 +167,7 @@ extension UIView {
 
 extension VCBaseSticker {
     // 当transform为identity时的frame
-    var cFrame: CGRect {
+    public var cFrame: CGRect {
         var rect = self.bounds
         rect.origin.x = self.center.x - rect.width / 2
         rect.origin.y = self.center.y - rect.height / 2
@@ -176,7 +176,7 @@ extension VCBaseSticker {
     }
     
     // 当前的旋转弧度
-    var cAngle: CGFloat {
+    public var cAngle: CGFloat {
         let trans = self.transform
         
         return trans.b < 0 ? CGFloat.pi - acos(trans.a) : acos(trans.a)

@@ -17,7 +17,7 @@ enum VCBorderStyle {
 let kMinFrameWidth: CGFloat  = 35
 let kMinFrameHeight: CGFloat = 35
 
-public class VCBaseSticker: UIView {
+open class VCBaseSticker: UIView {
     public var onBeginEditing: (() -> Void)?
     public var onClose: (() -> Void)?
     
@@ -41,8 +41,8 @@ public class VCBaseSticker: UIView {
     public var restrictionEnable: Bool = false             // 是否开启边缘限制
     
     
-    var initState = -1
-    var isEditing: Bool = false
+    public var initState = -1
+    public var isEditing: Bool = false
     
     /// 记录缩放的开始时的状态
     private var lastAngle: CGFloat!
@@ -80,7 +80,7 @@ public class VCBaseSticker: UIView {
         return button
     }()
     
-    lazy var contentView = UIView()
+    lazy public var contentView = UIView()
     
     override public func layoutSubviews() {
         super.layoutSubviews()
@@ -121,7 +121,7 @@ public class VCBaseSticker: UIView {
     }
     
     /// 自定义初始化，为了兼容外部设置约束的情况，将初始化放在layoutSubviews中调用
-    func customInit() {
+    open func customInit() {
         frame.size.width = max(frame.width, kMinFrameWidth)
         frame.size.height = max(frame.height, kMinFrameHeight)
         
@@ -177,7 +177,7 @@ public class VCBaseSticker: UIView {
     }
     
     /// 开始编辑，显示控制组件
-    public func beginEditing() {
+    open func beginEditing() {
         isEditing = true
         
         closeBtn.isHidden  = !closeBtnEnable
@@ -187,7 +187,7 @@ public class VCBaseSticker: UIView {
     }
     
     /// 结束编辑，隐藏控制组件
-    public func finishEditing() {
+    open func finishEditing() {
         isEditing = false
         
         closeBtn.isHidden  = true

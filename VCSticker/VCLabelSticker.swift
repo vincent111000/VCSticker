@@ -75,7 +75,7 @@ public class VCLabelSticker: VCBaseSticker {
     }
     
     // mark - 重写父类的方法
-    override func customInit() {
+    override open func customInit() {
         super.customInit()
         self.contentView.addSubview(textField)
         textField.edgesToSuperview(0)

@@ -11,7 +11,7 @@ import UIKit
 public class VCImageSticker: VCBaseSticker {
     public var imageView = UIImageView()
     
-    override func customInit() {
+    override open func customInit() {
          super.customInit()
          self.contentView.addSubview(imageView)
          imageView.edgesToSuperview(0)

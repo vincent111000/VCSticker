@@ -89,9 +89,9 @@
 		2A4280F823BD79BD007CC78B /* VCSticker */ = {
 			isa = PBXGroup;
 			children = (
+				2A4280FB23BD79BD007CC78B /* Images.xcassets */,
 				2A4280F923BD79BD007CC78B /* VCLabelSticker.swift */,
 				2A4280FA23BD79BD007CC78B /* VCImageSticker.swift */,
-				2A4280FB23BD79BD007CC78B /* Images.xcassets */,
 				2A4280FC23BD79BD007CC78B /* VCBaseSticker.swift */,
 				2A4280FD23BD79BD007CC78B /* VCStickerUtils.swift */,
 			);
