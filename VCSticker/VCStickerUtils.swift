@@ -179,7 +179,7 @@ extension VCBaseSticker {
     public var cAngle: CGFloat {
         let trans = self.transform
         
-        return trans.b < 0 ? CGFloat.pi - acos(trans.a) : acos(trans.a)
+        return trans.b < 0 ? CGFloat.pi * 2 - acos(trans.a) : acos(trans.a)
     }
 }
 
