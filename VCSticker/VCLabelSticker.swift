@@ -20,9 +20,13 @@ public class VCLabelSticker: VCBaseSticker {
             self.textField.placeholder = placeHolder
         }
     }
-    public var fontSize = UIFont.systemFontSize {          // 字体大小
-        didSet {
-            self.textField.font = self.textField.font?.withSize(fontSize)
+    public var fontSize: CGFloat {          // 字体大小
+        set {
+            self.textField.font = self.textField.font?.withSize(newValue)
+        }
+        
+        get {
+            return self.textField.font?.pointSize ?? UIFont.systemFontSize
         }
     }
     public var textColor   = UIColor.black {               // 文字颜色

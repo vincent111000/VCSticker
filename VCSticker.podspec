@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
   spec.name             = 'VCSticker'
   spec.module_name      = 'VCSticker'
-  spec.version          = "1.0.2"
+  spec.version          = "1.0.3"
   spec.summary          = "Swift 文字、图片便签效果"
   spec.swift_version    = '5.0'
   spec.homepage         = "https://github.com/vincent111000/VCSticker"
