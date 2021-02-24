@@ -10,17 +10,17 @@ import UIKit
 
 public class VCLabelSticker: VCBaseSticker {
     
-    public var shadowEnable: Bool = false {                // 是否显示文字阴影
+    @objc public var shadowEnable: Bool = false {                // 是否显示文字阴影
         didSet {
             self.textField.layer.shadowColor = shadowColor
         }
     }
-    public var placeHolder = "请输入文字" {                  // 占位字符
+    @objc public var placeHolder = "请输入文字" {                  // 占位字符
         didSet {
             self.textField.placeholder = placeHolder
         }
     }
-    public var fontSize: CGFloat {          // 字体大小
+    @objc public var fontSize: CGFloat {          // 字体大小
         set {
             self.textField.font = self.textField.font?.withSize(newValue)
         }
@@ -29,12 +29,12 @@ public class VCLabelSticker: VCBaseSticker {
             return self.textField.font?.pointSize ?? UIFont.systemFontSize
         }
     }
-    public var textColor   = UIColor.black {               // 文字颜色
+    @objc public var textColor   = UIColor.black {               // 文字颜色
         didSet {
             self.textField.textColor = textColor
         }
     }
-    public var text: String? {                              // 文本内容
+    @objc public var text: String? {                              // 文本内容
         set {
             self.textField.text = newValue
         }
@@ -43,11 +43,11 @@ public class VCLabelSticker: VCBaseSticker {
         }
     }
     
-    private var shadowColor: CGColor {
+    @objc private var shadowColor: CGColor {
         return self.shadowEnable ? UIColor.black.cgColor : UIColor.clear.cgColor
     }
     
-    private lazy var textField: UITextField = {     // 文字输入框
+    public lazy var textField: UITextField = {     // 文字输入框
         let textField = UITextField()
         
         textField.delegate  = self
@@ -69,7 +69,7 @@ public class VCLabelSticker: VCBaseSticker {
         return textField
     }()
     
-    public init(center: CGPoint) {
+    @objc public init(center: CGPoint) {
         let frame = CGRect(x: center.x - kMinFrameWidth / 2, y: center.y - kMinFrameWidth / 2, width: kMinFrameWidth, height: kMinFrameWidth)
         super.init(frame: frame)
     }
@@ -79,14 +79,14 @@ public class VCLabelSticker: VCBaseSticker {
     }
     
     // mark - 重写父类的方法
-    override open func customInit() {
+    @objc override open func customInit() {
         super.customInit()
         self.contentView.addSubview(textField)
         textField.edgesToSuperview(0)
         adjustFrameWithContent()
     }
     
-    override public func finishEditing() {
+    @objc override public func finishEditing() {
         super.finishEditing()
         textField.resignFirstResponder()
     }

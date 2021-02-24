@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addImageSticker(_ sender: Any) {
-        let image = VCImageSticker(frame: CGRect(x: 20, y: 40, width: 200, height: 200))
+        let image = VCImageSticker(frame: CGRect(x: 20, y: 120, width: 200, height: 200))
         image.imageView.image = UIImage(named: "test")
         image.borderColor = UIColor.randomColor
         self.view.addSubview(image)
@@ -54,6 +54,12 @@ class ViewController: UIViewController {
                 self.mSticker = image
             }
         }
+    }
+    
+    @IBAction func showOCDemo(_ sender: Any) {
+        let controller = OCDemoViewController()
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: true, completion: nil)
     }
 }
 

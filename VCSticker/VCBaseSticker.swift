@@ -18,13 +18,13 @@ let kMinFrameWidth: CGFloat  = 35
 let kMinFrameHeight: CGFloat = 35
 
 open class VCBaseSticker: UIView {
-    public var onBeginEditing: (() -> Void)?
-    public var onClose: (() -> Void)?
+    @objc public var onBeginEditing: (() -> Void)?
+    @objc public var onClose: (() -> Void)?
     
     var closeImage  = VCAsserts.closeImage
     var resizeImage = VCAsserts.resizeImage
     
-    public var borderColor = UIColor.cyan {                // 外边框颜色
+    @objc public var borderColor = UIColor.cyan {                // 外边框颜色
         didSet {
             border.strokeColor  = borderColor.cgColor
             closeBtn.tintColor  = borderColor.highlightColor()
@@ -36,9 +36,9 @@ open class VCBaseSticker: UIView {
     var borderStyle = VCBorderStyle.solid           // 外边框样式
     var padding: CGFloat = 8                        // 内边距
     
-    public var closeBtnEnable: Bool  = true                // 是否显示关闭按钮
-    public var resizeBtnEnable: Bool = true                // 是否显示缩放按钮
-    public var restrictionEnable: Bool = false             // 是否开启边缘限制
+    @objc public var closeBtnEnable: Bool  = true                // 是否显示关闭按钮
+    @objc public var resizeBtnEnable: Bool = true                // 是否显示缩放按钮
+    @objc public var restrictionEnable: Bool = false             // 是否开启边缘限制
     
     
     public var initState = -1
@@ -177,7 +177,7 @@ open class VCBaseSticker: UIView {
     }
     
     /// 开始编辑，显示控制组件
-    open func beginEditing() {
+    @objc open func beginEditing() {
         isEditing = true
         
         closeBtn.isHidden  = !closeBtnEnable
@@ -187,7 +187,7 @@ open class VCBaseSticker: UIView {
     }
     
     /// 结束编辑，隐藏控制组件
-    open func finishEditing() {
+    @objc open func finishEditing() {
         isEditing = false
         
         closeBtn.isHidden  = true

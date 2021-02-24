@@ -12,6 +12,7 @@
 		2A42810023BD79BD007CC78B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A4280FB23BD79BD007CC78B /* Images.xcassets */; };
 		2A42810123BD79BD007CC78B /* VCBaseSticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4280FC23BD79BD007CC78B /* VCBaseSticker.swift */; };
 		2A42810223BD79BD007CC78B /* VCStickerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4280FD23BD79BD007CC78B /* VCStickerUtils.swift */; };
+		2AC3798325E6450800061259 /* OCDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3798225E6450800061259 /* OCDemoViewController.m */; };
 		2AE89D2223B99F200060875F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE89D2123B99F200060875F /* AppDelegate.swift */; };
 		2AE89D2423B99F200060875F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE89D2323B99F200060875F /* SceneDelegate.swift */; };
 		2AE89D2623B99F200060875F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE89D2523B99F200060875F /* ViewController.swift */; };
@@ -45,6 +46,9 @@
 		2A4280FB23BD79BD007CC78B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2A4280FC23BD79BD007CC78B /* VCBaseSticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCBaseSticker.swift; sourceTree = "<group>"; };
 		2A4280FD23BD79BD007CC78B /* VCStickerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCStickerUtils.swift; sourceTree = "<group>"; };
+		2AC3798025E6450800061259 /* VCStickerDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VCStickerDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		2AC3798125E6450800061259 /* OCDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCDemoViewController.h; sourceTree = "<group>"; };
+		2AC3798225E6450800061259 /* OCDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCDemoViewController.m; sourceTree = "<group>"; };
 		2AE89D1E23B99F200060875F /* VCStickerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VCStickerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE89D2123B99F200060875F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AE89D2323B99F200060875F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,10 +129,13 @@
 				2AE89D2123B99F200060875F /* AppDelegate.swift */,
 				2AE89D2323B99F200060875F /* SceneDelegate.swift */,
 				2AE89D2523B99F200060875F /* ViewController.swift */,
+				2AC3798125E6450800061259 /* OCDemoViewController.h */,
+				2AC3798225E6450800061259 /* OCDemoViewController.m */,
 				2AE89D2723B99F200060875F /* Main.storyboard */,
 				2AE89D2A23B99F260060875F /* Assets.xcassets */,
 				2AE89D2C23B99F260060875F /* LaunchScreen.storyboard */,
 				2AE89D2F23B99F260060875F /* Info.plist */,
+				2AC3798025E6450800061259 /* VCStickerDemo-Bridging-Header.h */,
 			);
 			path = VCStickerDemo;
 			sourceTree = "<group>";
@@ -219,6 +226,7 @@
 				TargetAttributes = {
 					2AE89D1D23B99F200060875F = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1220;
 					};
 					2AE89D3323B99F270060875F = {
 						CreatedOnToolsVersion = 11.3;
@@ -290,6 +298,7 @@
 				2AE89D2423B99F200060875F /* SceneDelegate.swift in Sources */,
 				2A42810223BD79BD007CC78B /* VCStickerUtils.swift in Sources */,
 				2A42810123BD79BD007CC78B /* VCBaseSticker.swift in Sources */,
+				2AC3798325E6450800061259 /* OCDemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +471,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VCStickerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,6 +480,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Vincent.VCStickerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VCStickerDemo/VCStickerDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -479,6 +491,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VCStickerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -487,6 +500,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Vincent.VCStickerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VCStickerDemo/VCStickerDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

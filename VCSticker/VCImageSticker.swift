@@ -9,7 +9,7 @@
 import UIKit
 
 public class VCImageSticker: VCBaseSticker {
-    public var imageView = UIImageView()
+    @objc public var imageView = UIImageView()
     
     override open func customInit() {
          super.customInit()
